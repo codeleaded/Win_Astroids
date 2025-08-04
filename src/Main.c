@@ -131,9 +131,9 @@ void Ship_Render(Ship* s){
     RenderLine(Vec2_Mulf(p3,SCALE),Vec2_Mulf(p1,SCALE),WHITE,1.0f);
 }
 
-void Figure_Update(void* f,double w->ElapsedTime){
+void Figure_Update(void* f,double ElapsedTime){
     Figure* fig = (Figure*)f;
-    fig->p = Vec2_Add(Vec2_Mulf(fig->v,w->ElapsedTime),fig->p);
+    fig->p = Vec2_Add(Vec2_Mulf(fig->v,ElapsedTime),fig->p);
 
     if(fig->p.x+fig->r < 0.0f)       fig->p.x = 1.0f+fig->r;
     if(fig->p.x-fig->r > 1.0f)       fig->p.x = -fig->r;
